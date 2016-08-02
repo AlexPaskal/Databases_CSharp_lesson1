@@ -47,7 +47,17 @@ namespace Databases
         }
         static void Read_From_Database()
         {
-            
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = @"Data Source=HP\HOMESERVER;Initial Catalog=database_001;Integrated Security=True";
+            SqlCommand command = new SqlCommand("SELECT * FROM People ORDER BY id", conn);
+            conn.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            conn.Close();
+            conn.Dispose();
+
+            Console.WriteLine("Reading from database was successful");
         }
     }
 }
