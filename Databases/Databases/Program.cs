@@ -53,6 +53,10 @@ namespace Databases
             conn.Open();
 
             SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine("'{0}', '{1}', '{2}', '{3}'.", reader[0], reader["name"], reader[2], reader[3]);
+            }
 
             conn.Close();
             conn.Dispose();
