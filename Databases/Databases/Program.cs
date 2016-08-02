@@ -11,6 +11,26 @@ namespace Databases
     {
         static void Main(string[] args)
         {
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                
+            }
+            finally
+            {
+                
+            }
+        }
+        static void Write_To_Database()
+        {
+            
+        }
+        static void Read_From_Database()
+        {
+            
         }
     }
 }
