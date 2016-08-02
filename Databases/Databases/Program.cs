@@ -33,7 +33,17 @@ namespace Databases
         }
         static void Write_To_Database()
         {
-            
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = @"Data Source=HP\HOMESERVER;Initial Catalog=database_001;Integrated Security=True";
+            SqlCommand command = new SqlCommand("INSERT INTO People (id,name,date,height) VALUES (5,'name5','2005-01-01 10:10:10.500','205')", conn);
+            conn.Open();
+
+            command.ExecuteReader();
+
+            conn.Close();
+            conn.Dispose();
+
+            Console.WriteLine("Writing to database was successful");
         }
         static void Read_From_Database()
         {
